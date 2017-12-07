@@ -20,7 +20,7 @@
     include 'depend.php';
     ?>
 </head>
-<body data-spy="scroll" data-target="#site-nav">
+<body>
   <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
       <div class="container">
           <?php include 'header.php'; ?>
@@ -37,8 +37,10 @@
       </div><!-- /.container -->
   </nav>
 
-  <section id="about" class="section about">
+  
       <div class="container">
+	    <div class="tab-content">
+		  <div id= "Leaderboard" class="tab-pane fade in active">
           <div class="row">
               <div class="col-sm-1">
               </div><!-- /.col-sm-1 -->
@@ -90,8 +92,10 @@
 
               </div>
           </div><!-- /.row -->
-      </div><!-- /.container -->
-  </section>
+		  </div>
+     </div>
+  </div><!-- /.container -->
+    
 
 
   <?php include 'footer.php';?>
