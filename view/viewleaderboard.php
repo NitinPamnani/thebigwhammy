@@ -25,7 +25,7 @@
       <div class="container">
           <?php include 'header.php'; ?>
 		  <div class="collapse navbar-collapse" id="navbar-items">
-            <ul class="nav navbar-nav nav-tabs">
+            <ul class="nav navbar-nav navbar-right">
 
                 <!-- navigation menu -->
                 <li class="active"><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
