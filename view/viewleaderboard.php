@@ -24,6 +24,16 @@
   <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
       <div class="container">
           <?php include 'header.php'; ?>
+		  <div class="collapse navbar-collapse" id="navbar-items">
+            <ul class="nav navbar-nav nav-tabs">
+
+                <!-- navigation menu -->
+                <li class="active"><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
+                <li><a data-toggle="tab" href="#Leaderboard">Leaderboard</a></li>
+                <li><a data-toggle="tab" href="#Cup">Cup</a></li>
+
+            </ul>
+        </div>
       </div><!-- /.container -->
   </nav>
 
