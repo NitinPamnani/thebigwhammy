@@ -20,27 +20,77 @@
     include 'depend.php';
     ?>
 </head>
-<body>
-  <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
-      <div class="container">
-          <?php include 'header.php'; ?>
-		  <div class="collapse navbar-collapse" id="navbar-items">
+<!--made the id as site-nav2 to keep the navbar as solid-->
+<nav id="site-nav2" class="navbar navbar-solid navbar-fixed-top navbar-custom">
+    <div class="container">
+        <?php include 'header.php'; ?>
+        <div class="collapse navbar-collapse" id="navbar-items">
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- navigation menu -->
-                <li class="active"><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
+                <li ><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
                 <li><a data-toggle="tab" href="#Leaderboard">Leaderboard</a></li>
                 <li><a data-toggle="tab" href="#Cup">Cup</a></li>
 
             </ul>
         </div>
-      </div><!-- /.container -->
-  </nav>
+    </div><!-- /.container -->
+</nav>
+<body style="padding-top: 60px;">
+ <div class="container">
+  <div class="tab-content">
+  <!--<div class="container">-->
 
-  
-      <div class="container">
-	    <div class="tab-content">
-		  <div id= "Leaderboard" class="tab-pane fade in active">
+          <div id= "LiveAwards" class="tab-pane">
+              <div class="row">
+                  <h3>Live Awards</h3>
+                  <div class="col-sm-1">
+                  </div><!-- /.col-sm-1 -->
+
+                  <div class="col-sm-4">
+
+
+                      <div class="card" style="width: 20rem;">
+                          <img class="card-img-top" src="http://localhost/thebigwhammy/assets/images/default.jpg" alt="Card image cap">
+                          <div class="card-block">
+                              <h4 class="card-title">Monthly</h4>
+                              <p class="card-text">Monthly Award is given to the player who scored the maximum cumulative in a month.</p>
+
+                          </div>
+                      </div>
+
+
+
+
+                  </div><!-- /.col-sm-4 -->
+                  <div class="col-sm-4">
+
+
+                      <div class="card" style="width: 20rem;">
+                          <img class="card-img-top" src="http://localhost/thebigwhammy/assets/images/default.jpg" alt="Card image cap">
+                          <div class="card-block">
+                              <h4 class="card-title">Everest</h4>
+                              <p class="card-text">Everest Award is given to the player who achieved the highest score in a month, in any game week.</p>
+
+                          </div>
+                      </div>
+
+
+
+
+                  </div><!-- /.col-sm-4 -->
+                  <div class="col-sm-1">
+
+                  </div>
+              </div><!-- /.row -->
+          </div>
+      <!--</div>-->
+
+
+
+    <!--<div class="container">-->
+
+		  <div id= "Leaderboard" class="tab-pane">
           <div class="row">
               <div class="col-sm-1">
               </div><!-- /.col-sm-1 -->
@@ -93,10 +143,11 @@
               </div>
           </div><!-- /.row -->
 		  </div>
-     </div>
-  </div><!-- /.container -->
-    
 
+    <!--</div>-->
+
+</div>
+  </div>
 
   <?php include 'footer.php';?>
 </body>
