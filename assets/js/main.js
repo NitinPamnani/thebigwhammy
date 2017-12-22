@@ -64,6 +64,55 @@ $('#registration-form').submit(function(e){
         });
 });
 
+$(document).ready(function(){
+    $('#gwHistoryModal').on('show.bs.modal', function (e) {
+
+        var userId = $(e.relatedTarget).data('id');
+        var url = "https://fantasy.premierleague.com/drf/entry/"+userId+"/history";
+        var proxy = 'https://cors-anywhere.herokuapp.com/';
+        $.ajax({
+            url : proxy+url, //Here you will fetch records
+            //useCORS: true,
+            //beforeSend: xhr.setRequestHeader('Authorization',''),
+            //jsonpCallback: 'myJsonMethod',
+            contentType: "application/json",
+            dataType: 'json',
+            async: false,
+
+            success : function(data){
+
+                var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
+                    "                        <tr>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Game Week\">GAME WEEK</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Game Week Points\">GAME WEEK POINTS</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Event Transfers\">EVENT TRANSFERS</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Transfer Costs\">TRANSFER COSTS</th>\n" +
+                    "                        </tr>\n" +
+                    "                        \n";//Show fetched data from url
+                console.log(JSON.stringify(data.history));
+                if(data) {
+                    $.each(data.history, function (key, value) {
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td><\n"+"<td>"+value.event_transfers_cost+"</td></tr>";
+                    });
+                    htmlData += "</table>";
+                    $('.gwHistoryModal').html(htmlData);
+                }
+
+            }
+
+    });
+
+        /*$.getJSON("https://fantasy.premierleague.com/drf/entry/"+userId+"/history", function(data){
+            console.log(data);
+        });*/
+    });
+    $("#gwHistorymodal").on("hidden.bs.modal", function(e){
+        $(".gwHistoryModal").html("Getting Game Week History...");
+    });
+});
+
+
+
 /*
  * SmoothScroll
 */

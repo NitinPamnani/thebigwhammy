@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- navigation menu -->
-                <li ><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
+                <li class="active"><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
                 <li><a data-toggle="tab" href="#Leaderboard">Leaderboard</a></li>
                 <li><a data-toggle="tab" href="#Cup">Cup</a></li>
 
@@ -41,7 +41,7 @@
   <div class="tab-content">
   <!--<div class="container">-->
 
-          <div id= "LiveAwards" class="tab-pane">
+          <div id= "LiveAwards" class="tab-pane active">
               <div class="row">
                   <h3>Live Awards</h3>
                   <div class="col-sm-1">
@@ -88,6 +88,7 @@
 
 
 
+
     <!--<div class="container">-->
 
 		  <div id= "Leaderboard" class="tab-pane">
@@ -105,8 +106,8 @@
                           <th>Rank</th>
                           <th>Team</th>
                           <th>Manager</th>
-                          <th>GW</th>
-                          <th>TOT</th>
+                          <!--<th>GW</th>-->
+                          <th>Total</th>
                       </tr>
                       <?php foreach($_SESSION['set1data'] as $item){
                           echo "<tr>";?>
@@ -114,8 +115,8 @@
 
                           <?php echo "<th>".$item['rank_sort']."</th>";?>
                           <?php echo "<th>".$item['entry_name']."</th>";?>
-                          <?php echo "<th>".$item['player_name']."</th>";?>
-                          <?php echo "<th>".$item['event_total']."</th>";?>
+                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\" data-id=".$item['entry'].">".$item['player_name']."</a></th>";?>
+                          <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
 
 
@@ -127,8 +128,8 @@
 
                           <?php echo "<th>".$item['rank_sort']."</th>";?>
                           <?php echo "<th>".$item['entry_name']."</th>";?>
-                          <?php echo "<th>".$item['player_name']."</th>";?>
-                          <?php echo "<th>".$item['event_total']."</th>";?>
+                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\"  data-id=".$item['entry'].">".$item['player_name']."</a></th>";?>
+                          <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
 
 
@@ -143,6 +144,26 @@
               </div>
           </div><!-- /.row -->
 		  </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="gwHistoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog " role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Game Week History</h4>
+                  </div>
+                  <div class="modal-body gwHistoryModal">
+                      Getting Game Week History ...
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default gwclose" data-dismiss="modal">Close</button>
+
+                  </div>
+              </div>
+          </div>
+      </div>
 
     <!--</div>-->
 
