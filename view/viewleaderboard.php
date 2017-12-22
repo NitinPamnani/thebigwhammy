@@ -98,7 +98,7 @@
 
               <div class="col-sm-10">
 
-                  <h3 class=>The LeaderBoard</h3>
+                  <h3 class=>The LeaderBoard - click on manager's name to view gameweek history</h3>
 
 
                   <table class="table table-hover table-responsive">
