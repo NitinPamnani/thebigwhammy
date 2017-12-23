@@ -65,12 +65,15 @@ $('#registration-form').submit(function(e){
 });
 
 $(document).ready(function(){
+    $('#footballLoader').hide();
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
         var userId = $(e.relatedTarget).data('id');
         var url = "https://fantasy.premierleague.com/drf/entry/"+userId+"/history";
         var proxy = 'https://cors-anywhere.herokuapp.com/';
+        $('#footballLoader').show();
         $.ajax({
+
             url : proxy+url, //Here you will fetch records
             //useCORS: true,
             //beforeSend: xhr.setRequestHeader('Authorization',''),
@@ -80,6 +83,7 @@ $(document).ready(function(){
             async: false,
 
             success : function(data){
+                $('#footballLoader').hide();
 
                 var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
                     "                        <tr>\n" +
@@ -105,6 +109,11 @@ $(document).ready(function(){
         /*$.getJSON("https://fantasy.premierleague.com/drf/entry/"+userId+"/history", function(data){
             console.log(data);
         });*/
+    });
+    $('#footballLoader').bind('ajaxStart', function(){
+        $(this).show();
+    }).bind('ajaxStop', function(){
+        $(this).hide();
     });
     $("#gwHistorymodal").on("hidden.bs.modal", function(e){
         $(".gwHistoryModal").html("Getting Game Week History...");
