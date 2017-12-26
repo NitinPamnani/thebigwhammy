@@ -71,8 +71,8 @@ $(document).ready(function(){
         var userId = $(e.relatedTarget).data('id');
         var url = "https://fantasy.premierleague.com/drf/entry/"+userId+"/history";
         var proxy = 'https://cors-anywhere.herokuapp.com/';
-        var fBloader = "<div id = \"footballLoader\"></div>";
-        $('.gwHistoryModal').html(fBloader);
+
+        $('.gwHistoryModal').html("");
         $('#footballLoader').show();
         $.ajax({
 

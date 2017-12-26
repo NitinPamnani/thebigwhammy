@@ -636,7 +636,7 @@ ul li {
   font-size:smaller
 }
 #footballLoader {
-  border: 16px solid #f3f3f3;
+  /*border: 16px solid #f3f3f3;
   border-radius: 90%;
   /*border-top: 16px solid #3498db;*/
   position: fixed;
