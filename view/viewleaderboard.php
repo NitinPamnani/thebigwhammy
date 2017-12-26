@@ -146,7 +146,7 @@
 		  </div>
 
 
-          <div id="footballLoader"></div>
+          
 
       <!-- Modal -->
       <div class="modal fade" id="gwHistoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -157,7 +157,7 @@
                       <h4 class="modal-title" id="myModalLabel">Game Week History</h4>
                   </div>
                   <div class="modal-body gwHistoryModal">
-
+                    <div id="footballLoader"></div>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default gwclose" data-dismiss="modal">Close</button>

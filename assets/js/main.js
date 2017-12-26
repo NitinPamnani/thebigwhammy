@@ -71,6 +71,8 @@ $(document).ready(function(){
         var userId = $(e.relatedTarget).data('id');
         var url = "https://fantasy.premierleague.com/drf/entry/"+userId+"/history";
         var proxy = 'https://cors-anywhere.herokuapp.com/';
+        var fBloader = "<div id = \"footballLoader\"></div>";
+        $('.gwHistoryModal').html(fBloader);
         $('#footballLoader').show();
         $.ajax({
 
@@ -80,7 +82,7 @@ $(document).ready(function(){
             //jsonpCallback: 'myJsonMethod',
             contentType: "application/json",
             dataType: 'json',
-            async: false,
+            async: true,
 
             success : function(data){
                 $('#footballLoader').hide();
@@ -110,14 +112,8 @@ $(document).ready(function(){
             console.log(data);
         });*/
     });
-    $('#footballLoader').bind('ajaxStart', function(){
-        $(this).show();
-    }).bind('ajaxStop', function(){
-        $(this).hide();
-    });
-    $("#gwHistorymodal").on("hidden.bs.modal", function(e){
-        $(".gwHistoryModal").html("Getting Game Week History...");
-    });
+   
+   
 });
 
 
