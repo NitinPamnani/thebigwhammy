@@ -44,9 +44,7 @@
           <div id= "LiveAwards" class="tab-pane active">
               <div class="row">
                   <h3>Live Awards</h3>
-                  <div class="col-sm-1">
-                  </div><!-- /.col-sm-1 -->
-
+                  
                   <div class="col-sm-4">
 
 
