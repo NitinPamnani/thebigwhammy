@@ -51,7 +51,7 @@
 
 
                       <div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="http://localhost/thebigwhammy/assets/images/default.jpg" alt="Card image cap">
+                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
                           <div class="card-block">
                               <h4 class="card-title">Monthly</h4>
                               <p class="card-text">Monthly Award is given to the player who scored the maximum cumulative in a month.</p>
@@ -67,7 +67,7 @@
 
 
                       <div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="http://localhost/thebigwhammy/assets/images/default.jpg" alt="Card image cap">
+                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
                           <div class="card-block">
                               <h4 class="card-title">Everest</h4>
                               <p class="card-text">Everest Award is given to the player who achieved the highest score in a month, in any game week.</p>
