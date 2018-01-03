@@ -19,8 +19,8 @@ class leadercontroller {
 
         ini_set("allow_url_fopen", 1);
 
-        $set2 = file_get_contents('https://fantasy.premierleague.com/drf/leagues-classic-standings/402475?phase=2&le-page=2&ls-page=2');
-        $set1 = file_get_contents('https://fantasy.premierleague.com/drf/leagues-classic-standings/402475?phase=2&le-page=2&ls-page=1');
+        $set2 = file_get_contents('https://fantasy.premierleague.com/drf/leagues-classic-standings/402475?phase=1&le-page=2&ls-page=2');
+        $set1 = file_get_contents('https://fantasy.premierleague.com/drf/leagues-classic-standings/402475?phase=1&le-page=2&ls-page=1');
 
         $set1data = json_decode($set1,true);
         $set2data = json_decode($set2,true);
