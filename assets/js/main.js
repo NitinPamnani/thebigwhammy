@@ -93,13 +93,15 @@ $(document).ready(function(){
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week Points\">GAME WEEK POINTS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Event Transfers\">EVENT TRANSFERS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Transfer Costs\">TRANSFER COSTS</th>\n" +
-					"                        <th data-toggle=\"tooltip\" title=\"GAME WEEK RANK\">GAMEWEEK RANK</th>\n" +
+					"                        <th data-toggle=\"tooltip\" title=\"RANK MOVEMENT\">RANK MOVEMENT</th>\n" +
                     "                        </tr>\n" +
                     "                        \n";//Show fetched data from url
                 console.log(JSON.stringify(data.history));
                 if(data) {
                     $.each(data.history, function (key, value) {
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+value.rank+"</td></tr>";
+						
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+value.movement+"</td></tr>";
+						
                     });
                     htmlData += "</table>";
                     $('.gwHistoryModal').html(htmlData);
