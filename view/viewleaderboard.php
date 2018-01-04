@@ -110,19 +110,19 @@
 				   <div class="dropdown">
 					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Phase
 						<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Overall</a></li>
-								<li><a href="#">September</a></li>
-								<li><a href="#">October</a></li>
-								<li><a href="#">November</a></li>
-								<li><a href="#">December</a></li>
-								<li><a href="#">January</a></li>
+							<ul class="dropdown-menu phase-menu">
+								<li><a href="#" data-value="overall">Overall</a></li>
+								<li><a href="#" data-value="september">September</a></li>
+								<li><a href="#" data-value="october">October</a></li>
+								<li><a href="#" data-value="november">November</a></li>
+								<li><a href="#" data-value="december">December</a></li>
+								<li><a href="#" data-value="january">January</a></li>
 							</ul>
 				    </div>
 					</div>
 					<div class="col-md-4"></div>
 				  </div>
-
+                 <div class="row">
                   <table class="table table-hover table-responsive">
                       <tr>
                           <th>Rank</th>
@@ -159,7 +159,7 @@
 
                   </table>
 
-
+                </div>
               </div><!-- /.col-sm-10 -->
               <div class="col-sm-1">
 
