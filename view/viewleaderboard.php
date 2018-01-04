@@ -104,9 +104,11 @@
               <div class="col-sm-10">
 
                   <h3 class=>The LeaderBoard - click on manager's name to view gameweek history</h3>
-				
-				  <div class="dropdown">
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+				<div class="row">
+				  <div class="col-md-4"></div>
+				  <div class="col-md-4">
+				   <div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Phase
 						<span class="caret"></span></button>
 							<ul class="dropdown-menu">
 								<li><a href="#">Overall</a></li>
@@ -116,6 +118,9 @@
 								<li><a href="#">December</a></li>
 								<li><a href="#">January</a></li>
 							</ul>
+				    </div>
+					</div>
+					<div class="col-md-4"></div>
 				  </div>
 
                   <table class="table table-hover table-responsive">
