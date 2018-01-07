@@ -8,5 +8,9 @@
 require_once 'controller/leadercontroller.php';
 $cont=new leadercontroller();
 if(@$_GET['bwc']) $err=@$_GET['bwc'];
+if(@$_GET['stat']){
+    $stat = @$_GET['stat'];
+    $cont->handlerequest($stat);
+}
 $cont->handlerequest();
 ?>

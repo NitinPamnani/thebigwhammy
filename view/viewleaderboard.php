@@ -28,8 +28,8 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- navigation menu -->
-                <li class="active"><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
-                <li><a data-toggle="tab" href="#Leaderboard">Leaderboard</a></li>
+                <li class="active"><a data-toggle="tab" href="#Leaderboard">Leaderboard</a></li>
+                <li><a data-toggle="tab" href="#LiveAwards">Live Awards</a></li>
                 <li><a data-toggle="tab" href="#Cup">Cup</a></li>
 
             </ul>
@@ -41,7 +41,7 @@
   <div class="tab-content">
   <!--<div class="container">-->
 
-          <div id= "LiveAwards" class="tab-pane active">
+          <div id= "LiveAwards" class="tab-pane">
               <div class="row">
                   <h3>Live Awards</h3>
                   
@@ -96,7 +96,7 @@
 
     <!--<div class="container">-->
 
-		  <div id= "Leaderboard" class="tab-pane">
+		  <div id= "Leaderboard" class="tab-pane active">
           <div class="row">
               <div class="col-sm-1">
               </div><!-- /.col-sm-1 -->
@@ -108,15 +108,16 @@
 				  <div class="col-md-4"></div>
 				  <div class="col-md-4">
 				   <div class="dropdown">
-					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Phase
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php if($_SESSION['phaseValue']) {echo $_SESSION['phaseValue'];} else{ echo "Select Phase"; }?>
 						<span class="caret"></span></button>
 							<ul class="dropdown-menu phase-menu">
-								<li><a href="#" data-value="overall">Overall</a></li>
-								<li><a href="#" data-value="september">September</a></li>
-								<li><a href="#" data-value="october">October</a></li>
-								<li><a href="#" data-value="november">November</a></li>
-								<li><a href="#" data-value="december">December</a></li>
-								<li><a href="#" data-value="january">January</a></li>
+								<li><a href="leaderboard.php?stat=overall" data-value="overall">Overall</a></li>
+                                <li><a href="leaderboard.php?stat=august" data-value="august">August</a></li>
+                                <li><a href="leaderboard.php?stat=september" data-value="september">September</a></li>
+								<li><a href="leaderboard.php?stat=october" data-value="october">October</a></li>
+								<li><a href="leaderboard.php?stat=november" data-value="november">November</a></li>
+								<li><a href="leaderboard.php?stat=december" data-value="december">December</a></li>
+								<li><a href="leaderboard.php?stat=january" data-value="january">January</a></li>
 							</ul>
 				    </div>
 					</div>
