@@ -171,7 +171,7 @@
 
 
           
-                    <div style="visibility:hidden; " id="footballLoader"></div>
+                    <div id="footballLoader"></div>
       <!-- Modal -->1
       <div class="modal fade" id="gwHistoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog " role="document">
