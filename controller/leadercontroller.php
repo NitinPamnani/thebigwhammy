@@ -45,6 +45,7 @@ class leadercontroller {
         $_SESSION['set2data'] = $set2data['standings']['results'];
         $_SESSION['phaseValue'] = $stat;
 
+
         include 'view/viewleaderboard.php';
     }
 
