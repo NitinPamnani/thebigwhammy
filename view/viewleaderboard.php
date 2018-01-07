@@ -111,13 +111,13 @@
 					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php if($_SESSION['phaseValue']) {echo $_SESSION['phaseValue'];} else{ echo "Select Phase"; }?>
 						<span class="caret"></span></button>
 							<ul class="dropdown-menu phase-menu">
-								<li><a href="leaderboard.php?stat=overall" data-value="overall">Overall</a></li>
-                                <li><a href="leaderboard.php?stat=august" data-value="august">August</a></li>
-                                <li><a href="leaderboard.php?stat=september" data-value="september">September</a></li>
-								<li><a href="leaderboard.php?stat=october" data-value="october">October</a></li>
-								<li><a href="leaderboard.php?stat=november" data-value="november">November</a></li>
-								<li><a href="leaderboard.php?stat=december" data-value="december">December</a></li>
-								<li><a href="leaderboard.php?stat=january" data-value="january">January</a></li>
+								<li><a href="?stat=overall" data-value="overall">Overall</a></li>
+                                <li><a href="?stat=august" data-value="august">August</a></li>
+                                <li><a href="?stat=september" data-value="september">September</a></li>
+								<li><a href="?stat=october" data-value="october">October</a></li>
+								<li><a href="?stat=november" data-value="november">November</a></li>
+								<li><a href="?stat=december" data-value="december">December</a></li>
+								<li><a href="?stat=january" data-value="january">January</a></li>
 							</ul>
 				    </div>
 					</div>
