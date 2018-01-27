@@ -139,7 +139,7 @@
 
                           <?php echo "<th>".$item['rank_sort']."</th>";?>
                           <?php echo "<th>".$item['entry_name']."</th>";?>
-                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\" data-id=".$item['entry'].">".$item['player_name']."</a></th>";?>
+                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\" data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
 
@@ -152,7 +152,7 @@
 
                           <?php echo "<th>".$item['rank_sort']."</th>";?>
                           <?php echo "<th>".$item['entry_name']."</th>";?>
-                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\"  data-id=".$item['entry'].">".$item['player_name']."</a></th>";?>
+                          <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\"  data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
 

@@ -45,6 +45,9 @@ class leadercontroller {
         $_SESSION['set2data'] = $set2data['standings']['results'];
         $_SESSION['phaseValue'] = $stat;
 
+        $myfile = fopen("data.txt","w");
+        echo fwrite($myfile, "Hello World.");
+        fclose($myfile);
 
         include 'view/viewleaderboard.php';
     }

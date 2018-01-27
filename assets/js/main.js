@@ -70,6 +70,13 @@ $(document).ready(function(){
     $('#footballLoader').hide();
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
+        var jsn;
+        $.getJSON("tableOutputFinal.json", function(json){
+             console.log(json);
+             jsn = json;
+        });
+
+        var userName = $(e.relatedTarget).data('name');
         var userId = $(e.relatedTarget).data('id');
         var url = "https://fantasy.premierleague.com/drf/entry/"+userId+"/history";
         var proxy = 'https://cors-anywhere.herokuapp.com/';
@@ -89,20 +96,23 @@ $(document).ready(function(){
             success : function(data){
                 $('#footballLoader').hide();
 
+
                 var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
                     "                        <tr>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week\">GAME WEEK</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week Points\">GAME WEEK POINTS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Event Transfers\">EVENT TRANSFERS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Transfer Costs\">TRANSFER COSTS</th>\n" +
-					"                        <th data-toggle=\"tooltip\" title=\"RANK MOVEMENT\">RANK MOVEMENT</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Game Week RankT\">GAME WEEK RANK</th>\n" +
+					"                        <th data-toggle=\"tooltip\" title=\"Rank Movement\">RANK MOVEMENT</th>\n" +
                     "                        </tr>\n" +
                     "                        \n";//Show fetched data from url
-                console.log(JSON.stringify(data.history));
+                //console.log(JSON.stringify(data.history));
                 if(data) {
                     $.each(data.history, function (key, value) {
-						
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+value.movement+"</td></tr>";
+                        //console.log(userName);
+						//console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+jsn[value.event][userName]+"</td>\n"+"<td>"+value.movement+"</td></tr>";
 						
                     });
                     htmlData += "</table>";
