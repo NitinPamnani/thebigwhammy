@@ -71,7 +71,7 @@ $(document).ready(function(){
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
         var jsn;
-        $.getJSON("tableOutputFinal.json", function(json){
+        $.getJSON("tableOutputRanks.json", function(json){
              console.log(json);
              jsn = json;
         });
