@@ -66,6 +66,7 @@
 
                       <div class="card" style="width: 20rem;">
                           <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
+
                           <div class="card-block">
                               <h4 class="card-title">Iron Man</h4>
                               <p class="card-text">Stay Tuned. Will be updated shortly.</p>
@@ -78,14 +79,20 @@
 
                   </div><!-- /.col-sm-4 -->
                   <div class="col-sm-4">
-					<div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
-                          <div class="card-block">
-                              <h4 class="card-title">Everest</h4>
-                              <p class="card-text">Everest Award is given to the player who achieved the highest score in a month, in any game week.</p>
+					<div class="card EverestCard" style="width: 20rem;">
 
-                          </div>
+
+                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title">Everest</h4>
+                                <p class="card-text">Everest Award is given to the player who achieved the highest score in a month, in any game week.</p>
+
+                           </div>
+
+
                       </div>
+
+
                   </div>
               </div><!-- /.row -->
           </div>

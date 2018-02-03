@@ -67,6 +67,13 @@ $('#registration-form').submit(function(e){
 });
 
 $(document).ready(function(){
+    var jsnForPrize;
+    $.getJSON("tableOutputPoints.json", function (jsonPoints) {
+        console.log(jsonPoints);
+        jsnForPrize = jsonPoints;
+    });
+
+
     $('#footballLoader').hide();
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
@@ -112,7 +119,14 @@ $(document).ready(function(){
                     $.each(data.history, function (key, value) {
                         //console.log(userName);
 						//console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+jsn[value.event][userName]+"</td>\n"+"<td>"+value.movement+"</td></tr>";
+                        var gwRank;
+                        if(typeof jsn[value.event] == "undefined"){
+                            gwRank = 0;
+                        }else {
+                            console.log(value.event+"\n");
+                            gwRank = jsn[value.event][userName];
+                        }
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"<td>"+value.movement+"</td></tr>";
 						
                     });
                     htmlData += "</table>";
@@ -127,7 +141,28 @@ $(document).ready(function(){
             console.log(data);
         });*/
     });
-   
+
+    var gameWeekEverest;
+    var playerNameEverest;
+    var pointsEverest = -1;
+
+    $(".EverestCard").click(function(e){
+       $.each(jsnForPrize, function(gameWeek, mapOfUsers){
+          $.each(mapOfUsers, function(playerName, playerPoints){
+              if(playerPoints > pointsEverest){
+                  gameWeekEverest = gameWeek;
+                  playerNameEverest = playerName;
+                  pointsEverest = playerPoints;
+              }
+          });
+       });
+       alert(playerNameEverest+"has earned the maximum points in a single gameweek so far.\n"+"GameWeek:"+gameWeekEverest+"\n"+"Points:"+pointsEverest+"\n");
+    });
+
+
+
+
+
    $(".dropdown-menu li a").click(function(){
     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
