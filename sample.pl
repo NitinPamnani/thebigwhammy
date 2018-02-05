@@ -14,6 +14,7 @@ my @collectedUserIds;
 my %idToPlayerName;
 my %experimentMap;
 my %experimentMap2;
+my %individualGwPoints;
 my $tableFile = "tableOutputFinal.txt";
 my $pointsFile = "tableOutputPoints.json";
 open(my $FH, ">>tableOutputRanks.json") or die "Cannot open file $!";
@@ -40,6 +41,7 @@ foreach (@collectedUserIds){
     #print $FH $_->{'points'}." ";
         $gwPoints += ($_->{'points'} - $_->{'event_transfers_cost'});
 	$experimentMap{$_->{'event'}}{$idToPlayerName{$id}} = $gwPoints;
+        $individualGwPoints{$_->{'event'}}{$idToPlayerName{$id}} = $_->{'points'} - $_->{'event_transfers_cost'};
   }
   #print $FH "\n";
 } 
@@ -48,7 +50,7 @@ foreach (@collectedUserIds){
 sortExperimentMap(\%experimentMap);
 
 my $jsonString = encode_json(\%experimentMap2);
-my $jsonPoints = encode_json(\%experimentMap);
+my $jsonPoints = encode_json(\%individualGwPoints);
 
 print $GH $jsonPoints;
 print $FH $jsonString;
