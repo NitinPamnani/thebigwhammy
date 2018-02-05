@@ -111,11 +111,12 @@ $(document).ready(function(){
                     "                        <th data-toggle=\"tooltip\" title=\"Event Transfers\">EVENT TRANSFERS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Transfer Costs\">TRANSFER COSTS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week RankT\">GAME WEEK RANK</th>\n" +
-					"                        <th data-toggle=\"tooltip\" title=\"Rank Movement\">RANK MOVEMENT</th>\n" +
+
                     "                        </tr>\n" +
                     "                        \n";//Show fetched data from url
                 //console.log(JSON.stringify(data.history));
                 if(data) {
+                    var gameWeekPoints = 0;
                     $.each(data.history, function (key, value) {
                         //console.log(userName);
 						//console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
@@ -126,7 +127,8 @@ $(document).ready(function(){
                             console.log(value.event+"\n");
                             gwRank = jsn[value.event][userName];
                         }
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(value.points - value.event_transfers_cost)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"<td>"+value.movement+"</td></tr>";
+                        gameWeekPoints += (value.points - value.event_transfers_cost);
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(gameWeekPoints)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"</tr>";
 						
                     });
                     htmlData += "</table>";
