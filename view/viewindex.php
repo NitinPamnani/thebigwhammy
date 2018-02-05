@@ -261,7 +261,7 @@
                 <div id="collapseIronMan" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <p><ul>
-                            <li>This award will be given to the participant who climbs the maximum ranks in The Big Whammy Table of XXXX participants from GW 19 to GW 38</li>
+                            <li>This award will be given to the participant who climbs the maximum ranks in The Big Whammy Table of 82 participants from GW 19 to GW 38</li>
                             <li>The participant's rank AFTER GW 19 will be noted and the rank AFTER GW 38. The participant who has climbed the maximum ranks is the IRON MAN.</li>
                         </ul></p>
                     </div>
@@ -296,7 +296,7 @@
                 <div id="collapseFourth" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <p><ul>
-                            <li>This award will be given to the participant who finishes 4th at the end of GW 38 in The Big Whammy Table of XXXXX participants.</li>
+                            <li>This award will be given to the participant who finishes 4th at the end of GW 38 in The Big Whammy Table of 82 participants.</li>
                         </ul></p>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                 <div id="collapseThird" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <p><ul>
-                            <li>This award will be given to the participant who finishes 3rd at the end of GW 38 in The Big Whammy Table of XXXXX participants.</li>
+                            <li>This award will be given to the participant who finishes 3rd at the end of GW 38 in The Big Whammy Table of 82 participants.</li>
                         </ul></p>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
                 <div id="collapseSecond" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <p><ul>
-                            <li>This award will be given to the participant who finishes 2nd at the end of GW 38 in The Big Whammy Table of XXXXX participants.</li>
+                            <li>This award will be given to the participant who finishes 2nd at the end of GW 38 in The Big Whammy Table of 82 participants.</li>
                         </ul></p>
                     </div>
                 </div>
@@ -344,7 +344,7 @@
                 <div id="collapseWhammy" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <p><ul>
-                            <li>This award will be given to the participant who finishes 1st at the end of GW 38 in The Big Whammy Table of XXXXX participants.</li>
+                            <li>This award will be given to the participant who finishes 1st at the end of GW 38 in The Big Whammy Table of 82 participants.</li>
                         </ul></p>
                     </div>
                 </div>
@@ -379,7 +379,7 @@
                                     <li>The use of your wildcards, bench boost, triple captain or free hit will not affect your liability to any of the awards in any way. Use them as per your discretion.</li>
 
                                     <li>Any conflict to the Rules mentioned above or discrepancies arising in the season will be discussed by The Big Whammy management and their decision on the same will be final and irrevocable.</li>
-                                    <li>Apart from the XXXX participants, no participant will be allowed to enter the competition at any later stage.</li>
+                                    <li>Apart from the 82 participants, no participant will be allowed to enter the competition at any later stage.</li>
                                 </ul></p>
                             </div>
                         </div>
