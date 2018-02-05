@@ -15,7 +15,9 @@ my %idToPlayerName;
 my %experimentMap;
 my %experimentMap2;
 my $tableFile = "tableOutputFinal.txt";
-open(my $FH, ">>tableOutputFinal.txt") or die "Cannot open file $!";
+my $pointsFile = "tableOutputPoints.json";
+open(my $FH, ">>tableOutputRanks.json") or die "Cannot open file $!";
+open(my $GH, ">>tableOutputPoints.json") or die "Cannot open file $!";
 my $userDetails_aref = getUserList(402475,1);
 #print Dumper($userDetails_aref);
 appendUsersToCollectedUserIds($userDetails_aref);
@@ -33,9 +35,11 @@ foreach (@collectedUserIds){
   #next;
   my $id = $_;
   my $userHistory_aref = getUserHistory($_);
+  my $gwPoints = 0;
   foreach (@{$userHistory_aref}){
     #print $FH $_->{'points'}." ";
-	$experimentMap{$_->{'event'}}{$idToPlayerName{$id}} = $_->{'points'};
+        $gwPoints += ($_->{'points'} - $_->{'event_transfers_cost'});
+	$experimentMap{$_->{'event'}}{$idToPlayerName{$id}} = $gwPoints;
   }
   #print $FH "\n";
 } 
@@ -44,8 +48,12 @@ foreach (@collectedUserIds){
 sortExperimentMap(\%experimentMap);
 
 my $jsonString = encode_json(\%experimentMap2);
+my $jsonPoints = encode_json(\%experimentMap);
+
+print $GH $jsonPoints;
 print $FH $jsonString;
 close $FH;
+close $GH;
 
 
 sub sortExperimentMap{
