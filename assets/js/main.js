@@ -126,7 +126,7 @@ $(document).ready(function(){
                             console.log(value.event+"\n");
                             gwRank = jsn[value.event][userName];
                         }
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+value.points+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"<td>"+value.movement+"</td></tr>";
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(value.points - value.event_transfers_cost)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"<td>"+value.movement+"</td></tr>";
 						
                     });
                     htmlData += "</table>";
