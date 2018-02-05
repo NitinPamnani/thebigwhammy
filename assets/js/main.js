@@ -107,7 +107,8 @@ $(document).ready(function(){
                 var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
                     "                        <tr>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week\">GAME WEEK</th>\n" +
-                    "                        <th data-toggle=\"tooltip\" title=\"Game Week Points\">GAME WEEK POINTS</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Individual Game Week Points\">GAME WEEK POINTS</th>\n" +
+                    "                        <th data-toggle=\"tooltip\" title=\"Cumulative Game Week Points\">TOTAL POINTS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Event Transfers\">EVENT TRANSFERS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Transfer Costs\">TRANSFER COSTS</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week RankT\">GAME WEEK RANK</th>\n" +
@@ -117,6 +118,7 @@ $(document).ready(function(){
                 //console.log(JSON.stringify(data.history));
                 if(data) {
                     var gameWeekPoints = 0;
+                    var individualGameWeekPoints = 0;
                     $.each(data.history, function (key, value) {
                         //console.log(userName);
 						//console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
@@ -127,8 +129,9 @@ $(document).ready(function(){
                             console.log(value.event+"\n");
                             gwRank = jsn[value.event][userName];
                         }
-                        gameWeekPoints += (value.points - value.event_transfers_cost);
-                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(gameWeekPoints)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"</tr>";
+                        individualGameWeekPoints =(value.points - value.event_transfers_cost);
+                        gameWeekPoints += individualGameWeekPoints;
+                        htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(individualGameWeekPoints)+"</td>\n"+"<td>"+(gameWeekPoints)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"</tr>";
 						
                     });
                     htmlData += "</table>";
