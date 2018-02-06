@@ -702,6 +702,13 @@ ul li {
  /* background-image: url(http://www.thebigwhammy.com/assets/images/default.jpg);*/
 }
 
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none
+}
+
+
+
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }

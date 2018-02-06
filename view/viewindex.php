@@ -101,6 +101,7 @@
                 <li><a data-scroll href="#prizes">Prizes</a></li>
                 <!-- <li><a data-scroll href="#">Sponsorship</a></li> -->
                 <li><a data-scroll href="#faq">FAQ</a></li>
+                <li><a href="leaderboard.php" target="_blank">Leader Board</a></li>
                 <!-- <li><a data-scroll href="#photos">Photos</a></li> -->
                 <!--<li><a data-scroll href="#contact">Contact us</a></li>-->
 

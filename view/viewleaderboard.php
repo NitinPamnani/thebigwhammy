@@ -48,13 +48,47 @@
                   <div class="col-sm-4">
 
 
-                      <div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
+                      <div id="monthlyawardcarousel" class="card carousel slide" data-ride="carousel" style="width: 20rem;">
+
+                          <div class="carousel-inner">
+                              <div class="item active">
+                                  <canvas id="monthly-January" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
+                                  <canvas id="monthly-August" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
+                                  <canvas id="monthly-September" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
+                                  <canvas id="monthly-October" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
+                                  <canvas id="monthly-November" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
+                                  <canvas id="monthly-December" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+                          </div>
+
                           <div class="card-block">
                               <h4 class="card-title">Monthly</h4>
                               <p class="card-text">Monthly Award is given to the player who scored the maximum cumulative in a month.</p>
 
                           </div>
+                          <a class="left carousel-control" href="#monthlyawardcarousel" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left"></span>
+                              <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#monthlyawardcarousel" data-slide="next">
+                              <span class="glyphicon glyphicon-chevron-right"></span>
+                              <span class="sr-only">Next</span>
+                          </a>
                       </div>
 
 
@@ -65,7 +99,8 @@
 
 
                       <div class="card" style="width: 20rem;">
-                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
+                          <!--<img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">-->
+                          <canvas id="ironman-award" class="card-img-top" width="360" height="235"></canvas>
 
                           <div class="card-block">
                               <h4 class="card-title">Iron Man</h4>
@@ -82,7 +117,8 @@
 					<div class="card EverestCard" style="width: 20rem;">
 
 
-                          <img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">
+                          <!--<img class="card-img-top" src="http://www.thebigwhammy.com/assets/images/default.jpg" alt="Card image cap">-->
+                        <canvas id="everest-award" class="card-img-top" width="360" height="235"></canvas>
                             <div class="card-block">
                                 <h4 class="card-title">Everest</h4>
                                 <p class="card-text">Everest Award is given to the player who achieved the highest score in a month, in any game week.</p>
