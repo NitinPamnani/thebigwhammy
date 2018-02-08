@@ -103,7 +103,7 @@
                           <canvas id="ironman-award" class="card-img-top" width="360" height="235"></canvas>
 
                           <div class="card-block">
-                              <h4 class="card-title">Iron Man</h4>
+                              <h4 class="card-title"><a data-toggle="modal" data-target="#ironManModal">Iron Man</a></h4>
                               <p class="card-text">Stay Tuned. Will be updated shortly.</p>
 
                           </div>
@@ -224,6 +224,24 @@
                       <h4 class="modal-title" id="myModalLabel">Game Week History</h4>
                   </div>
                   <div class="modal-body gwHistoryModal">
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default gwclose" data-dismiss="modal">Close</button>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+	  
+	  <div class="modal fade" id="ironManModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog " role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">THE FIGHT FOR IRON MAN</h4>
+                  </div>
+                  <div class="modal-body ironManModal">
 
                   </div>
                   <div class="modal-footer">
