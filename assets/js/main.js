@@ -281,6 +281,31 @@ $(document).ready(function(){
        //alert(playerNameEverest+"has earned the maximum points in a single gameweek so far.\n"+"GameWeek:"+gameWeekEverest+"\n"+"Points:"+pointsEverest+"\n");
    //});
 
+  $.getJSON("tableOutputRankJumps.json", function(data){
+      var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
+          "                        <tr>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"PlayerName\">PLAYER NAME</th>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"Rank After GAmeWeek 19\">RANK AFTER GW19</th>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"Rank After GameWeek 24\">RANK AFTER GW24</th>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"Ranks Climbed 24\">RANKS CLIMBED</th>\n" +
+          "                        </tr>\n" +
+          "                        \n";
+
+          var gameWeekPoints = 0;
+          var individualGameWeekPoints = 0;
+          $.each(data, function (playerName, playerDetails) {
+              //console.log(userName);
+              //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
+
+              //individualGameWeekPoints =(value.points - value.event_transfers_cost);
+              //gameWeekPoints += individualGameWeekPoints;
+              htmlData += "<tr><td>"+playerName+"</td>\n"+"<td>"+playerDetails['gw19rank']+"</td>\n"+"<td>"+playerDetails['presentrank']+"</td>\n"+"<td>"+playerDetails['climbed']+"</td>\n"+"</tr>";
+
+          });
+          htmlData += "</table>";
+          $('.ironManModal').html(htmlData);
+
+  });
 
 
 
