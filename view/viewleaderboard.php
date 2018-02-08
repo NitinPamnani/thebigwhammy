@@ -104,7 +104,7 @@
 
                           <div class="card-block">
                               <h4 class="card-title"><a data-toggle="modal" data-target="#ironManModal">Iron Man</a></h4>
-                              <p class="card-text">Stay Tuned. Will be updated shortly.</p>
+                              <p class="card-text">Click on "Iron Man" for more details</p>
 
                           </div>
                       </div>

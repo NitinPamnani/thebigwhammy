@@ -27,7 +27,7 @@ function applyEverestAward(gameWeekEverest, player, gameWeekPoints){
 
 
     var name = player;
-    var texts = player+"has earned the maximum points in a single gameweek so far."+"The player earned "+gameWeekPoints+" points for gameweek"+gameWeekEverest;
+    var texts = player+"has  earned  the  maximum  points  in  a  single  gameweek  so  far. "+" The  player  earned  "+gameWeekPoints+"  points  for  gameweek "+gameWeekEverest;
     var nameSplit = name.split(" ");
     var initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
 
@@ -39,7 +39,7 @@ function applyIronManAward(playerName, RankJump){
 
 
     var name = playerName;
-    var texts = name+"has jumped "+RankJump+" ranks since game week 19. This award will again be calculated at the end of game week 25";
+    var texts = name+" has  climbed  "+RankJump+"  ranks  since  game  week  19.";
     var nameSplit = name.split(" ");
     var initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
 
@@ -262,7 +262,7 @@ $(document).ready(function(){
     $.getJSON("tableOutputRanks.json", function(jsonRanks){
        var arrayOfNames = Object.keys(jsonRanks[10]);
        $.each(arrayOfNames, function(index,playerName){
-           var rankJump = jsonRanks[24][playerName] - jsonRanks[19][playerName];
+           var rankJump = jsonRanks[19][playerName] - jsonRanks[26][playerName];
            if(rankJump > 0 && rankJump > ironManRankJump){
                ironManRankJump = rankJump;
                ironManPlayer = playerName;
@@ -286,8 +286,8 @@ $(document).ready(function(){
           "                        <tr>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"PlayerName\">PLAYER NAME</th>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"Rank After GAmeWeek 19\">RANK AFTER GW19</th>\n" +
-          "                        <th data-toggle=\"tooltip\" title=\"Rank After GameWeek 24\">RANK AFTER GW24</th>\n" +
-          "                        <th data-toggle=\"tooltip\" title=\"Ranks Climbed 24\">RANKS CLIMBED</th>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"Current Rank\">CURRENT RANK</th>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"Ranks Climbed\">RANKS CLIMBED</th>\n" +
           "                        </tr>\n" +
           "                        \n";
 
