@@ -15,10 +15,12 @@ my %idToPlayerName;
 my %experimentMap;
 my %experimentMap2;
 my %individualGwPoints;
+my %player2RankJump;#since gw 19
 my $tableFile = "tableOutputFinal.txt";
 my $pointsFile = "tableOutputPoints.json";
 open(my $FH, ">>tableOutputRanks.json") or die "Cannot open file $!";
 open(my $GH, ">>tableOutputPoints.json") or die "Cannot open file $!";
+open(my $RJ, ">>tableOutputRankJumps.json") or die "Cannot open file $!";
 my $userDetails_aref = getUserList(402475,1);
 #print Dumper($userDetails_aref);
 appendUsersToCollectedUserIds($userDetails_aref);
@@ -47,15 +49,20 @@ foreach (@collectedUserIds){
 } 
 
 #print $FH Dumper(\%experimentMap) ;
+
 sortExperimentMap(\%experimentMap);
+getRankJumpMap(\%experimentMap2);
 
 my $jsonString = encode_json(\%experimentMap2);
 my $jsonPoints = encode_json(\%individualGwPoints);
+my $jsonIronMan = encode_json(\%player2RankJump);
 
 print $GH $jsonPoints;
 print $FH $jsonString;
+print $RJ $jsonIronMan;
 close $FH;
 close $GH;
+close $RJ;
 
 
 sub sortExperimentMap{
@@ -72,6 +79,18 @@ sub sortExperimentMap{
 	}
   }
 }
+
+sub getRankJumpMap{
+  my ($experimentMap2) = @_;
+  foreach my $player (keys %{$experimentMap2->{'10'}}){
+    $player2RankJump{$player}{'gw19rank'} = $experimentMap2->{'19'}{$player};
+    $player2RankJump{$player}{'presentrank'} = $experimentMap2->{'24'}{$player}; 
+    $player2RankJump{$player}{'climbed'} = $experimentMap2->{'24'}{$player} - $experimentMap2->{'19'}{$player};
+    
+  }
+ 
+}
+
 sub getUserHistory{
  my ($userId) = @_;
  
