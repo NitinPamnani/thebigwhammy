@@ -2,7 +2,32 @@
  * Change Navbar color while scrolling
 */
 
-
+function sortTable(tableId, valueToCompare){
+	var table,rows,switching, i, x, y, shouldSwitch;
+	table.document.getElementById(tableId);
+	switching = true;
+	
+	while(switching){
+		switching = false;
+		rows = table.getElementByTagName("TR");
+		for(i = 1; i < (rows.length - 1); i++) {
+			shouldSwitch = false;
+			x = rows[i].getElementByTagName("TD")[valueToCompare];
+			y = rows[i + 1].getElementByTagName("TD")[valueToCompare];
+			if(x.innerHTML < y.innerHTML){
+				shouldSwitch = true;
+				break;
+			}
+		}
+		if (shouldSwitch){
+			
+			rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+			switching = true;
+		}
+		
+	}
+	
+}
 function wrapText(context, text, x, y, maxWidth, lineHeight) {
     var words = text.split(' ');
     var line = '';
