@@ -18,12 +18,37 @@ my %individualGwPoints;
 my %player2RankJump;#since gw 19
 my %player2RankClimb;
 my %player2RankClimbFinal;
+my %player2Mon2Points;
+
+my %gw2m;
+$gw2m{'2'}{'start'} = 1;
+$gw2m{'2'}{'end'} = 3;
+
+$gw2m{'3'}{'start'} = 4;
+$gw2m{'3'}{'end'} = 7;
+
+$gw2m{'4'}{'start'} = 8;
+$gw2m{'4'}{'end'} = 10;
+
+$gw2m{'5'}{'start'} = 11;
+$gw2m{'5'}{'end'} = 14;
+
+$gw2m{'6'}{'start'} = 15;
+$gw2m{'6'}{'end'} = 21;
+
+$gw2m{'7'}{'start'} = 22;
+$gw2m{'7'}{'end'} = 25;
+
+$gw2m{'8'}{'start'} = 26;
+$gw2m{'8'}{'end'} = 28;
+
 my $tableFile = "tableOutputFinal.txt";
 my $pointsFile = "tableOutputPoints.json";
 open(my $FH, ">>tableOutputRanks.json") or die "Cannot open file $!";
 open(my $GH, ">>tableOutputPoints.json") or die "Cannot open file $!";
 open(my $RJ, ">>tableOutputRankJumps.json") or die "Cannot open file $!";
 open(my $IMS, ">>tableOutputRankJumpsSorted.json") or die "Cannot open file $!";
+open(my $PTM, ">>tableOutputMonthsPoints.json") or die "Cannot open file $!";
 my $userDetails_aref = getUserList(402475,1);
 #print Dumper($userDetails_aref);
 appendUsersToCollectedUserIds($userDetails_aref);
@@ -56,20 +81,24 @@ foreach (@collectedUserIds){
 sortExperimentMap(\%experimentMap);
 getRankJumpMap(\%experimentMap2);
 getSortedRankJumps(\%player2RankClimb);
+getPlayer2MonthPoints(\%individualGwPoints);
 
 my $jsonString = encode_json(\%experimentMap2);
 my $jsonPoints = encode_json(\%individualGwPoints);
 my $jsonIronMan = encode_json(\%player2RankJump);
 my $jsonIronManSorted = encode_json(\%player2RankClimbFinal);
+my $jsonPointsToMonth = encode_json(\%player2Mon2Points);
 
 print $GH $jsonPoints;
 print $FH $jsonString;
 print $RJ $jsonIronMan;
 print $IMS $jsonIronManSorted;
+print $PTM $jsonPointsToMonth;
 close $FH;
 close $GH;
 close $RJ;
 close $IMS;
+close $PTM;
 
 
 sub sortExperimentMap{
@@ -151,4 +180,23 @@ sub appendUsersToCollectedUserIds{
     push @collectedUserIds, $userMap->{"entry"};
 	$idToPlayerName{$userMap->{"entry"}} = $userMap->{"player_name"};
   }
+}
+
+sub getPlayer2MonthPoints{
+  my ($invGwPoints) = @_;
+  foreach my $gameweek (keys %{$invGwPoints}){
+    foreach my $player (keys %{$invGwPoints->{$gameweek}}){
+	  
+	  foreach my $month (keys %gw2m){
+	    my $start = $gw2m{$month}{'start'};
+		my $end = $gw2m{$month}{'end'};
+		my $points = 0;
+		for (my $iter = $start; $iter <= $end; $iter+=1){
+			$points += $invGwPoints->{$iter}{$player};
+		}
+		$player2Mon2Points{$player}{$month} = $points;
+	  }
+	}
+  }
+
 }
