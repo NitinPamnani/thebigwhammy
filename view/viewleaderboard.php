@@ -161,6 +161,7 @@
 								<li><a href="?stat=november" data-value="november">November</a></li>
 								<li><a href="?stat=december" data-value="december">December</a></li>
 								<li><a href="?stat=january" data-value="january">January</a></li>
+								<li><a href="?stat=february" data-value="february">February</a></li>
 							</ul>
 				    </div>
 					</div>
