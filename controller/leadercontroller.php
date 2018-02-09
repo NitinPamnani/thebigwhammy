@@ -41,15 +41,16 @@ class leadercontroller {
 		$set3 = file_get_contents('tableOutputMonthsPoints.json');
         $set1data = json_decode($set1,true);
         $set2data = json_decode($set2,true);
+		$set3data = json_decode($set3, true);
 
         $_SESSION['set1data'] = $set1data['standings']['results'];
         $_SESSION['set2data'] = $set2data['standings']['results'];
-		$_SESSION['set3data'] = $set3;
+		$_SESSION['set3data'] = $set3data;
         $_SESSION['phaseValue'] = $stat;
 		$_SESSION['phaseValue2'] = $phase;
 
         $myfile = fopen("data.txt","w");
-        echo fwrite($myfile, "Hello World.");
+        echo fwrite($myfile, "Hello world");
         fclose($myfile);
 
         include 'view/viewleaderboard.php';
