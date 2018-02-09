@@ -45,7 +45,7 @@ class leadercontroller {
         $_SESSION['set1data'] = $set1data['standings']['results'];
         $_SESSION['set2data'] = $set2data['standings']['results'];
 		$_SESSION['set3data'] = $set3;
-        $_SESSION['phaseValue'] = $stat;
+        $_SESSION['phaseValue'] = $phase;
 
         $myfile = fopen("data.txt","w");
         echo fwrite($myfile, "Hello World.");
