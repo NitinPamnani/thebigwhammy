@@ -186,7 +186,7 @@
                           <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\" data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
-						  <?php if($_SESSION['phaseValue'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
+						  <?php if($_SESSION['phaseValue2'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue2']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
 
 
                       <?php echo "</tr>";} ?>
@@ -200,7 +200,7 @@
                           <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\"  data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
                           <?php echo "<th>".$item['total']."</th>";?>
-						  <?php if($_SESSION['phaseValue'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
+						  <?php if($_SESSION['phaseValue2'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue2']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
 
 
                           <?php echo "</tr>";} ?>
