@@ -221,7 +221,17 @@
           </div><!-- /.row -->
 		  </div>
 
+      <div id= "Cup" class="tab-pane">
 
+         <div class="row">
+          <canvas id="timepass" width="700" height="500">kuch</canvas>
+          <div id="out"></div>
+          <script type="text/javascript" src="assets/js/simplegame.js"></script>
+         </div>
+
+
+
+      </div>
           
                     <div id="footballLoader"></div>
       <div id="ironmanloader" class="elementToFadeInAndOut"> <img src="http://www.thebigwhammy.com/assets/images/imload.png"> </div>
