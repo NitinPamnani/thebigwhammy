@@ -108,7 +108,7 @@
                           <canvas id="ironman-award" class="card-img-top" width="360" height="235"></canvas>
 
                           <div class="card-block">
-                              <h4 class="card-title"><a data-toggle="modal" data-target="#ironManModal">Iron Man</a></h4>
+                              <h4 class="card-title"><a id="ironmanmodalopener">Iron Man</a></h4>
                               <p class="card-text">Click on "Iron Man" for more details</p>
 
                           </div>
@@ -224,7 +224,9 @@
 
           
                     <div id="footballLoader"></div>
+      <div id="ironmanloader" class="elementToFadeInAndOut"> <img src="http://localhost/thebigwhammy/assets/images/imload.png"> </div>
       <!-- Modal -->
+
       <div class="modal fade" id="gwHistoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog " role="document">
               <div class="modal-content">

@@ -26,7 +26,7 @@ function sortTable(tableId, valueToCompare, elementTypeToCompare){
 			var rankB = rankBelement.innerHTML;
 
 
-			if(x.innerHTML < y.innerHTML){
+			if(parseInt(x.innerHTML) < parseInt(y.innerHTML)){
                 rankA = rankB;
                 rankB = temp;
                 rankAelement.innerHTML = rankA;
@@ -208,6 +208,18 @@ $(document).ready(function(){
 
 
     $('#footballLoader').hide();
+    $('#ironmanloader').hide();
+
+    $('#ironmanmodalopener').on('click',function(e){
+
+
+        $('#ironmanloader').show();
+        setTimeout(function() {$('#ironmanloader').hide();},2000);
+        sortTable("ironTable",4,"td");
+        setTimeout(function() {$('#ironManModal').modal('show');}, 2000);
+
+    });
+
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
         var jsn;
@@ -340,8 +352,9 @@ $(document).ready(function(){
    //});
 
   $.getJSON("tableOutputRankJumps.json", function(data){
-      var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
+      var htmlData = "<table class=\"table table-hover table-responsive\" id=\"ironTable\">\n" +
           "                        <tr>\n" +
+          "                        <th data-toggle=\"tooltip\" title=\"PlayerRank\">RANK</th>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"PlayerName\">PLAYER NAME</th>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"Rank After GAmeWeek 19\">RANK AFTER GW19</th>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"Current Rank\">CURRENT RANK</th>\n" +
@@ -351,17 +364,19 @@ $(document).ready(function(){
 
           var gameWeekPoints = 0;
           var individualGameWeekPoints = 0;
+          var rank = 1;
           $.each(data, function (playerName, playerDetails) {
               //console.log(userName);
               //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
 
               //individualGameWeekPoints =(value.points - value.event_transfers_cost);
               //gameWeekPoints += individualGameWeekPoints;
-              htmlData += "<tr><td>"+playerName+"</td>\n"+"<td>"+playerDetails['gw19rank']+"</td>\n"+"<td>"+playerDetails['presentrank']+"</td>\n"+"<td>"+playerDetails['climbed']+"</td>\n"+"</tr>";
-
+              htmlData += "<tr><td>"+rank+"</td>\n"+"<td>"+playerName+"</td>\n"+"<td>"+playerDetails['gw19rank']+"</td>\n"+"<td>"+playerDetails['presentrank']+"</td>\n"+"<td>"+playerDetails['climbed']+"</td>\n"+"</tr>";
+              rank++;
           });
           htmlData += "</table>";
           $('.ironManModal').html(htmlData);
+
 
   });
 

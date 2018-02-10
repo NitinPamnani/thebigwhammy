@@ -655,6 +655,43 @@ ul li {
   animation: spin 2s linear infinite;
   background-image: url("http://www.iconarchive.com/download/i65369/icons-land/metro-raster-sport/Soccer-Ball.ico");
 }
+#ironmanloader {
+  /*border: 16px solid #f3f3f3;
+  border-radius: 90%;
+  /*border-top: 16px solid #3498db;*/
+  position: fixed;
+  z-index: 999;
+
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  width: 256px;
+  height: 256px;
+
+
+}
+
+.elementToFadeInAndOut {
+  width:200px;
+  height: 200px;
+ /* background: red;*/
+  -webkit-animation: fadeinout 2s infinite forwards;
+  animation: fadeinout 2s infinite forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 0.5; }
+}
 
 .flip-container {
   position:relative;
