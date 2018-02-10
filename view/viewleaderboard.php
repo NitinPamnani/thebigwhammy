@@ -236,6 +236,7 @@
                   </div>
                   <div class="modal-body gwHistoryModal">
 
+
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default gwclose" data-dismiss="modal">Close</button>

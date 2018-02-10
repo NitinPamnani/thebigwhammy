@@ -249,7 +249,7 @@ $(document).ready(function(){
                 $('#footballLoader').hide();
 
 
-                var htmlData = "<table class=\"table table-hover table-responsive\">\n" +
+                var htmlData = "<div class=\"table-responsive\"><table class=\"table table-hover table-responsive\">\n" +
                     "                        <tr>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Game Week\">GAME WEEK</th>\n" +
                     "                        <th data-toggle=\"tooltip\" title=\"Individual Game Week Points\">GAME WEEK POINTS</th>\n" +
@@ -279,7 +279,7 @@ $(document).ready(function(){
                         htmlData += "<tr><td>"+value.event+"</td>\n"+"<td>"+(individualGameWeekPoints)+"</td>\n"+"<td>"+(gameWeekPoints)+"</td>\n"+"<td>"+value.event_transfers+"</td>\n"+"<td>"+value.event_transfers_cost+"</td>\n"+"<td>"+gwRank+"</td>\n"+"</tr>";
 						
                     });
-                    htmlData += "</table>";
+                    htmlData += "</table>"+"</div>";
                     $('.gwHistoryModal').html(htmlData);
                 }
 
@@ -352,7 +352,7 @@ $(document).ready(function(){
    //});
 
   $.getJSON("tableOutputRankJumps.json", function(data){
-      var htmlData = "<table class=\"table table-hover table-responsive\" id=\"ironTable\">\n" +
+      var htmlData = "<div class=\"table-responsive\"><table class=\"table table-hover table-responsive\" id=\"ironTable\">\n" +
           "                        <tr>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"PlayerRank\">RANK</th>\n" +
           "                        <th data-toggle=\"tooltip\" title=\"PlayerName\">PLAYER NAME</th>\n" +
@@ -374,7 +374,7 @@ $(document).ready(function(){
               htmlData += "<tr><td>"+rank+"</td>\n"+"<td>"+playerName+"</td>\n"+"<td>"+playerDetails['gw19rank']+"</td>\n"+"<td>"+playerDetails['presentrank']+"</td>\n"+"<td>"+playerDetails['climbed']+"</td>\n"+"</tr>";
               rank++;
           });
-          htmlData += "</table>";
+          htmlData += "</table>"+"</div>";
           $('.ironManModal').html(htmlData);
 
 
