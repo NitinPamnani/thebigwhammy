@@ -51,12 +51,11 @@
                       <div id="monthlyawardcarousel" class="card carousel slide" data-ride="carousel" style="width: 20rem;">
 
                           <div class="carousel-inner">
-                              <div class="item">
-                                  <canvas id="monthly-February" class="card-img-top" width="360" height="235"></canvas>
-                              </div>
-
                               <div class="item active">
                                   <canvas id="monthly-January" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+                              <div class="item">
+                                  <canvas id="monthly-February" class="card-img-top" width="360" height="235"></canvas>
                               </div>
 
                               <div class="item">
