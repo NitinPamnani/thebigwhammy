@@ -54,7 +54,7 @@ function applyEverestAward(gameWeekEverest, player, gameWeekPoints){
 
 
     var name = player;
-    var texts = player+"has  earned  the  maximum  points  in  a  single  gameweek  so  far. "+" The  player  earned  "+gameWeekPoints+"  points  for  gameweek "+gameWeekEverest;
+    var texts = player+" earned  the  maximum  points  in  a  single  gameweek  so  far. "+" The  player  earned  "+gameWeekPoints+"  points  for  gameweek "+gameWeekEverest;
     var nameSplit = name.split(" ");
     var initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
 
