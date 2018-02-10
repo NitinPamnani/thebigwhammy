@@ -2,9 +2,11 @@
  * Change Navbar color while scrolling
 */
 
-function sortTable(tableId, valueToCompare){
+
+
+function sortTable(tableId, valueToCompare, elementTypeToCompare){
 	var table,rows,switching, i, x, y, shouldSwitch;
-	table.document.getElementById(tableId);
+	table = document.getElementById(tableId);
 	switching = true;
 	
 	while(switching){
@@ -12,8 +14,8 @@ function sortTable(tableId, valueToCompare){
 		rows = table.getElementByTagName("TR");
 		for(i = 1; i < (rows.length - 1); i++) {
 			shouldSwitch = false;
-			x = rows[i].getElementByTagName("TD")[valueToCompare];
-			y = rows[i + 1].getElementByTagName("TD")[valueToCompare];
+			x = rows[i].getElementByTagName(elementTypeToCompare)[valueToCompare];
+			y = rows[i + 1].getElementByTagName(elementTypeToCompare)[valueToCompare];
 			if(x.innerHTML < y.innerHTML){
 				shouldSwitch = true;
 				break;
@@ -64,7 +66,7 @@ function applyIronManAward(playerName, RankJump){
 
 
     var name = playerName;
-    var texts = name+" has  climbed  "+RankJump+"  ranks  since  game  week  19.";
+    var texts = name+" climbed  "+RankJump+"  ranks  since  game  week  19.";
     var nameSplit = name.split(" ");
     var initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
 
@@ -75,9 +77,11 @@ function applyIronManAward(playerName, RankJump){
 function applyMonthlyAward(month, playerName, cumulativePoints, header){
 
     var name = playerName;
-    var texts = name+" has the highest cumulative points, "+cumulativePoints+" at the end of month-"+month;
+    var texts = name+" scored  the  highest  cumulative  points, "+cumulativePoints+"  at  the  end  of  month- "+month;
     var nameSplit = name.split(" ");
     var initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
+
+
 
     applyAward("monthly-"+month,initials, texts, header);
 }
@@ -189,7 +193,6 @@ $(document).ready(function(){
 
 
 
-
     $('#footballLoader').hide();
     $('#gwHistoryModal').on('show.bs.modal', function (e) {
 
@@ -296,9 +299,18 @@ $(document).ready(function(){
        applyIronManAward(ironManPlayer, ironManRankJump);
     });
 
-    var months = ["August", "September", "October", "November", "December", "January"];
+    /*var months = ["August", "September", "October", "November", "December", "January"];
     $.each(months, function(index,month){
         applyAward("monthly-"+month,":)","Go Slow. Work In Progress here.",month);
+    });*/
+    $.getJSON("tableOutPutMonthWinners.json", function(data){
+        $.each(data, function(monthName){
+            console.log(monthName+"\n");
+            var player = Object.keys(data[monthName]);
+            //alert(monthName +" "+Object.keys(data[monthName])+" "+data[monthName][player]);
+            applyMonthlyAward(String(monthName), String(player), String(data[monthName][player]),String(monthName));
+
+        });
     });
 
    //$(".EverestCard").click(function(e){

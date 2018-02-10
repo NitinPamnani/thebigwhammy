@@ -52,6 +52,10 @@
 
                           <div class="carousel-inner">
                               <div class="item active">
+                                  <canvas id="monthly-February" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+
+                              <div class="item">
                                   <canvas id="monthly-January" class="card-img-top" width="360" height="235"></canvas>
                               </div>
 
@@ -74,6 +78,8 @@
                               <div class="item">
                                   <canvas id="monthly-December" class="card-img-top" width="360" height="235"></canvas>
                               </div>
+
+
                           </div>
 
                           <div class="card-block">
@@ -169,14 +175,14 @@
 				  </div>
 				  <br>
                  <div class="row">
-                  <table class="table table-hover table-responsive">
+                  <table id="leaderboardTable" class="table table-hover table-responsive">
                       <tr>
-                          <th>Rank</th>
+                          <th>Serial</th>
                           <th>Team</th>
                           <th>Manager</th>
                           <!--<th>GW</th>-->
-                          <th>Total</th>
-						  <th>Total After Deducting Transfers</th>
+                          <!--<th>Total</th>-->
+						  <th>Total</th>
                       </tr>
                       <?php foreach($_SESSION['set1data'] as $item){
                           echo "<tr>";?>
@@ -186,7 +192,7 @@
                           <?php echo "<th>".$item['entry_name']."</th>";?>
                           <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\" data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
-                          <?php echo "<th>".$item['total']."</th>";?>
+                          <?php //echo "<th>".$item['total']."</th>";?>
 						  <?php if($_SESSION['phaseValue2'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue2']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
 
 
@@ -200,7 +206,7 @@
                           <?php echo "<th>".$item['entry_name']."</th>";?>
                           <?php echo "<th><a data-toggle=\"modal\" data-target=\"#gwHistoryModal\"  data-id=".$item['entry']." data-name=\"".$item["player_name"]."\">".$item['player_name']."</a></th>";?>
                           <?php //echo "<!--<th>-->".$item['event_total']."</th>";?>
-                          <?php echo "<th>".$item['total']."</th>";?>
+                          <?php //echo "<th>".$item['total']."</th>";?>
 						  <?php if($_SESSION['phaseValue2'] > 1){echo "<th>".$_SESSION['set3data'][$item["player_name"]][$_SESSION['phaseValue2']]."</th>";}else{echo "<th>".$item['total']."</th>";}?>
 
 
