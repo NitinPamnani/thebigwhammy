@@ -224,7 +224,7 @@
 
           
                     <div id="footballLoader"></div>
-      <div id="ironmanloader" class="elementToFadeInAndOut"> <img src="http://localhost/thebigwhammy/assets/images/imload.png"> </div>
+      <div id="ironmanloader" class="elementToFadeInAndOut"> <img src="http://www.thebigwhammy.com/assets/images/imload.png"> </div>
       <!-- Modal -->
 
       <div class="modal fade" id="gwHistoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
