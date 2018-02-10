@@ -308,10 +308,17 @@ $(document).ready(function(){
             console.log(monthName+"\n");
             var player = Object.keys(data[monthName]);
             //alert(monthName +" "+Object.keys(data[monthName])+" "+data[monthName][player]);
-            applyMonthlyAward(String(monthName), String(player), String(data[monthName][player]),String(monthName));
+            if(String(monthName) == "February"){
+                applyAward("monthly-"+"February",":)","Go Slow. Work In Progress here.",String(monthName));
+            }else {
+                applyMonthlyAward(String(monthName), String(player), String(data[monthName][player]), String(monthName));
+            }
+
 
         });
+
     });
+    //applyAward("monthly-"+"February",":)","Go Slow. Work In Progress here.",month);
 
    //$(".EverestCard").click(function(e){
 

@@ -704,7 +704,10 @@ ul li {
 
 
 .carousel-control.left, .carousel-control.right {
-  background-image: none
+  background-image: none;
+  top : 150px;
+  bottom: 150px;
+  width: 5%;
 }
 
 
