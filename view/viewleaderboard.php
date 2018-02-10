@@ -176,7 +176,7 @@
                  <div class="row">
                   <table id="leaderboardTable" class="table table-hover table-responsive">
                       <tr>
-                          <th>Serial</th>
+                          <th>Rank</th>
                           <th>Team</th>
                           <th>Manager</th>
                           <!--<th>GW</th>-->

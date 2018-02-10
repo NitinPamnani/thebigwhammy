@@ -11,13 +11,27 @@ function sortTable(tableId, valueToCompare, elementTypeToCompare){
 	
 	while(switching){
 		switching = false;
-		rows = table.getElementByTagName("TR");
+		rows = table.getElementsByTagName("TR");
 		for(i = 1; i < (rows.length - 1); i++) {
 			shouldSwitch = false;
-			x = rows[i].getElementByTagName(elementTypeToCompare)[valueToCompare];
-			y = rows[i + 1].getElementByTagName(elementTypeToCompare)[valueToCompare];
+			x = rows[i].getElementsByTagName(elementTypeToCompare)[valueToCompare];
+			y = rows[i + 1].getElementsByTagName(elementTypeToCompare)[valueToCompare];
+
+
+			var rankAelement = rows[i].getElementsByTagName(elementTypeToCompare)[0];
+            var rankBelement = rows[i+1].getElementsByTagName(elementTypeToCompare)[0];
+
+			var rankA = rankAelement.innerHTML;
+			var temp = rankA;
+			var rankB = rankBelement.innerHTML;
+
+
 			if(x.innerHTML < y.innerHTML){
-				shouldSwitch = true;
+                rankA = rankB;
+                rankB = temp;
+                rankAelement.innerHTML = rankA;
+                rankBelement.innerHTML = rankB;
+					shouldSwitch = true;
 				break;
 			}
 		}
@@ -355,7 +369,7 @@ $(document).ready(function(){
 
 
 
-
+sortTable("leaderboardTable",3,"TH");
 
 
 
