@@ -19,6 +19,7 @@ my %player2RankJump;#since gw 19
 my %player2RankClimb;
 my %player2RankClimbFinal;
 my %player2Mon2Points;
+my %month2Winner;
 
 my %gw2m;
 $gw2m{'2'}{'start'} = 1;
@@ -49,6 +50,7 @@ open(my $GH, ">>tableOutputPoints.json") or die "Cannot open file $!";
 open(my $RJ, ">>tableOutputRankJumps.json") or die "Cannot open file $!";
 open(my $IMS, ">>tableOutputRankJumpsSorted.json") or die "Cannot open file $!";
 open(my $PTM, ">>tableOutputMonthsPoints.json") or die "Cannot open file $!";
+open(my $MTW, ">>tableOutputMonthWinners.json") or die "Cannot open file $!";
 my $userDetails_aref = getUserList(402475,1);
 #print Dumper($userDetails_aref);
 appendUsersToCollectedUserIds($userDetails_aref);
@@ -82,25 +84,64 @@ sortExperimentMap(\%experimentMap);
 getRankJumpMap(\%experimentMap2);
 getSortedRankJumps(\%player2RankClimb);
 getPlayer2MonthPoints(\%individualGwPoints);
+getMonth2Winner(\%player2Mon2Points);
 
 my $jsonString = encode_json(\%experimentMap2);
 my $jsonPoints = encode_json(\%individualGwPoints);
 my $jsonIronMan = encode_json(\%player2RankJump);
 my $jsonIronManSorted = encode_json(\%player2RankClimbFinal);
 my $jsonPointsToMonth = encode_json(\%player2Mon2Points);
+my $jsonMonth2Winner2Points = encode_json(\%month2Winner);
 
 print $GH $jsonPoints;
 print $FH $jsonString;
 print $RJ $jsonIronMan;
 print $IMS $jsonIronManSorted;
 print $PTM $jsonPointsToMonth;
+print $MTW $jsonMonth2Winner2Points;
 close $FH;
 close $GH;
 close $RJ;
 close $IMS;
 close $PTM;
+close $MTW;
 
-
+sub getMonthByNumber{
+  my ($value) = @_;
+  if($value == 2){
+    return "August";
+  }elsif($value == 3){
+    return "September";
+  }elsif($value == 4){
+    return "October";
+  }elsif($value == 5){
+    return "November";
+  }elsif($value == 6){
+    return "December";
+  }elsif($value == 7){
+    return "January";
+  }elsif($value == 8){
+    return "February";
+  }
+}
+sub getMonth2Winner{
+  my ($player2Mon2Points) = @_;
+  #$month2Winner{$month}{$player} = $points;
+  my @months = keys(%gw2m);
+  foreach my $month (@months){
+    my $monthValue = getMonthByNumber($month);
+    my $max = -1;
+    my $playerName;
+    foreach my $player (keys %{$player2Mon2Points}){
+      my $pointsForThisMonth = $player2Mon2Points->{$player}{$month};
+      if($pointsForThisMonth > $max){
+        $max = $pointsForThisMonth;
+        $playerName = $player;
+      }
+    }
+   $month2Winner{$monthValue}{$playerName} = $max;
+  }
+}
 sub sortExperimentMap{
   my ($experimentMap_href) = @_;
   foreach my $gameWeeks (keys %$experimentMap_href){
