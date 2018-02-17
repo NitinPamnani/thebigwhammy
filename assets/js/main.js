@@ -316,7 +316,7 @@ $(document).ready(function(){
     $.getJSON("tableOutputRanks.json", function(jsonRanks){
        var arrayOfNames = Object.keys(jsonRanks[10]);
        $.each(arrayOfNames, function(index,playerName){
-           var rankJump = jsonRanks[19][playerName] - jsonRanks[26][playerName];
+           var rankJump = jsonRanks[19][playerName] - jsonRanks[27][playerName];
            if(rankJump > 0 && rankJump > ironManRankJump){
                ironManRankJump = rankJump;
                ironManPlayer = playerName;
@@ -329,7 +329,7 @@ $(document).ready(function(){
     $.each(months, function(index,month){
         applyAward("monthly-"+month,":)","Go Slow. Work In Progress here.",month);
     });*/
-    $.getJSON("tableOutPutMonthWinners.json", function(data){
+    $.getJSON("tableOutputMonthWinners.json", function(data){
         $.each(data, function(monthName){
             console.log(monthName+"\n");
             var player = Object.keys(data[monthName]);
