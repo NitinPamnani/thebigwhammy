@@ -380,7 +380,30 @@ $(document).ready(function(){
 
   });
 
+  $.getJSON("versusTable.json",function(data){
+      var htmlData = "<div class=\"table-responsive\"><table style='text-align:center;' class=\"table table-hover table-responsive\" id=\"fixtureTable\">\n" +
+          "                        <tr style='background-color: lightgrey;'>\n" +
+          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"Versus\">|</th>\n" +
+          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+          "                        </tr>\n" +
+          "                        \n";
 
+      //var gameWeekPoints = 0;
+      //var individualGameWeekPoints = 0;
+      //var rank = 1;
+      $.each(data, function (setNumber, setDetails) {
+          //console.log(userName);
+          //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
+
+          //individualGameWeekPoints =(value.points - value.event_transfers_cost);
+          //gameWeekPoints += individualGameWeekPoints;
+          htmlData += "<tr><td><strong>"+setDetails["team1"]+"</strong> <sub><em>"+setDetails["player1"]+"</em></sub></td>"+"<td><strong style='color:darkslateblue;'>"+"v/s"+"</strong></td>"+"<td><strong>"+setDetails["team2"]+"</strong> <sub><em>"+setDetails["player2"]+"</em></sub></td></tr>";
+
+      });
+      htmlData += "</table>"+"</div>";
+      $('#fixtureContainer').html(htmlData);
+  });
 
 
 

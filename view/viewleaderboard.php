@@ -223,12 +223,25 @@
 
       <div id= "Cup" class="tab-pane">
 
-         <div class="row">
+         <!--<div class="row">
           <canvas id="timepass" width="700" height="500">kuch</canvas>
           <div id="out"></div>
           <script type="text/javascript" src="assets/js/simplegame.js"></script>
-         </div>
+         </div>-->
+          <div class="col-md-1">
 
+          </div>
+           <div class="col-md-10">
+               <h3 class=>Fixtures for the Cup</h3>
+               <div class="row">
+                <div  id = "fixtureContainer">
+
+                </div>
+            </div>
+           </div>
+          <div class="col-md-1">
+
+          </div>
 
 
       </div>
