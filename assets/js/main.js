@@ -316,7 +316,7 @@ $(document).ready(function(){
     $.getJSON("tableOutputRanks.json", function(jsonRanks){
        var arrayOfNames = Object.keys(jsonRanks[10]);
        $.each(arrayOfNames, function(index,playerName){
-           var rankJump = jsonRanks[19][playerName] - jsonRanks[27][playerName];
+           var rankJump = jsonRanks[19][playerName] - jsonRanks[28][playerName];
            if(rankJump > 0 && rankJump > ironManRankJump){
                ironManRankJump = rankJump;
                ironManPlayer = playerName;
@@ -380,7 +380,7 @@ $(document).ready(function(){
 
   });
 
-  $.getJSON("versusTable.json",function(data){
+  $.getJSON("versusTable28.json",function(data){
       var htmlData = "<div class=\"table-responsive\"><table style='text-align:center;' class=\"table table-hover table-responsive\" id=\"fixtureTable\">\n" +
           "                        <tr style='background-color: lightgrey;'>\n" +
           "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
@@ -398,7 +398,7 @@ $(document).ready(function(){
 
           //individualGameWeekPoints =(value.points - value.event_transfers_cost);
           //gameWeekPoints += individualGameWeekPoints;
-          htmlData += "<tr><td><strong>"+setDetails["team1"]+"</strong> <sub><em>"+setDetails["player1"]+"</em></sub></td>"+"<td><strong style='color:darkslateblue;'>"+"v/s"+"</strong></td>"+"<td><strong>"+setDetails["team2"]+"</strong> <sub><em>"+setDetails["player2"]+"</em></sub></td></tr>";
+          htmlData += "<tr><td><strong>"+setDetails["team1"]+"</strong> <sub><em>"+setDetails["player1"]+"</em></sub></td>"+"<td><strong style='color:darkslateblue;'>"+setDetails["score1"]+"----"+setDetails["score2"]+"</strong></td>"+"<td><strong>"+setDetails["team2"]+"</strong> <sub><em>"+setDetails["player2"]+"</em></sub></td></tr>";
 
       });
       htmlData += "</table>"+"</div>";

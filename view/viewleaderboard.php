@@ -232,7 +232,7 @@
 
           </div>
            <div class="col-md-10">
-               <h3 class=>Fixtures for the Cup</h3>
+               <h3 class=>Knockout Cup Round 1 Game Week 28</h3>
                <div class="row">
                 <div  id = "fixtureContainer">
 
