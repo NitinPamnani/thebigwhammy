@@ -12,6 +12,7 @@ use File::Path qw(mkpath);
 
 my @collectedUserIds;
 my %idToPlayerName;
+my %teamNameToPlayerName;
 my %experimentMap;
 my %experimentMap2;
 my %individualGwPoints;
@@ -20,7 +21,7 @@ my %player2RankClimb;
 my %player2RankClimbFinal;
 my %player2Mon2Points;
 my %month2Winner;
-
+my %firstDraw;
 my %gw2m;
 $gw2m{'2'}{'start'} = 1;
 $gw2m{'2'}{'end'} = 3;
@@ -51,6 +52,7 @@ open(my $RJ, ">>tableOutputRankJumps.json") or die "Cannot open file $!";
 open(my $IMS, ">>tableOutputRankJumpsSorted.json") or die "Cannot open file $!";
 open(my $PTM, ">>tableOutputMonthsPoints.json") or die "Cannot open file $!";
 open(my $MTW, ">>tableOutputMonthWinners.json") or die "Cannot open file $!";
+open(my $TNPN, ">>tableOutputTeamNameToPlayerName") or die "Cannot open file $!";
 my $userDetails_aref = getUserList(402475,1);
 #print Dumper($userDetails_aref);
 appendUsersToCollectedUserIds($userDetails_aref);
@@ -92,6 +94,7 @@ my $jsonIronMan = encode_json(\%player2RankJump);
 my $jsonIronManSorted = encode_json(\%player2RankClimbFinal);
 my $jsonPointsToMonth = encode_json(\%player2Mon2Points);
 my $jsonMonth2Winner2Points = encode_json(\%month2Winner);
+my $jsonTeamNameToPlayerName = encode_json(\%teamNameToPlayerName);
 
 print $GH $jsonPoints;
 print $FH $jsonString;
@@ -99,6 +102,7 @@ print $RJ $jsonIronMan;
 print $IMS $jsonIronManSorted;
 print $PTM $jsonPointsToMonth;
 print $MTW $jsonMonth2Winner2Points;
+print $TNPN $jsonTeamNameToPlayerName;
 close $FH;
 close $GH;
 close $RJ;
@@ -220,6 +224,7 @@ sub appendUsersToCollectedUserIds{
   foreach my $userMap (@{$userDetails_aref}){
     push @collectedUserIds, $userMap->{"entry"};
 	$idToPlayerName{$userMap->{"entry"}} = $userMap->{"player_name"};
+        $teamNameToPlayerName{$userMap->{"player_name"}} = $userMap->{"entry_name"};
   }
 }
 
