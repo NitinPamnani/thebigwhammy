@@ -237,6 +237,36 @@
             <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
+                        <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseKnockout" aria-expanded="true" aria-controls="collapseKnockout">The Big Whammy Knockout Cup</a>
+                    </h4>
+                </div>
+
+                <div id="collapseKnockout" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <p><ul>
+                            <li>The Big Whammy Knockout Cup will begin in GW 28</li>
+                            <li>Qualifying - The top 64 scorers at the end of GW 27 will enter the first round. If there is a tie at the 64th position, (For eg. 64th and 65th participant has the same points), the participant who scored more in GW 27 will go through. If they are ties with the same GW points as well, then the following tie-breaks will be applied until a participant goes through:</li>
+                            <ol>
+                                <li>Most goals scored in the Gameweek</li>
+                                <li>Fewest goals conceded in the Gameweek</li>
+                                <li>Virtual coin toss</li>
+                            </ol>
+                            <li>Each qualifying team will be randomly drawn(through a random code generation) against another in the first round. The winner (the team with the highest Gameweek score minus any transfer points), will progress to the second round and another random draw, the losers are out! This process continues until the final Gameweek when the two remaining teams contest the cup final.</li>
+                            <li>If a cup match is drawn, the the following tie-breaks will be applied until a winner is found:</li>
+                            <ol>
+                                <li>Most goals scored in the Gameweek</li>
+                                <li>Fewest goals conceded in the Gameweek</li>
+                                <li>Virtual coin toss</li>
+                            </ol>
+                        </ul></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
                         <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMamooty" aria-expanded="true" aria-controls="collapseMamooty">Man of the Month (Mamooty Award)</a>
                     </h4>
                 </div>
