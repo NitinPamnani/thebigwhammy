@@ -232,11 +232,28 @@
 
           </div>
            <div class="col-md-10">
-               <h3 class=>Knockout Cup Round 1 Game Week 28</h3>
+               <h3 class=>Knockout Cup </h3>
+               <div class="row">
+                   <div class ="col-md-4"></div>
+                   <div class ="col-md-4">
+                     <div class="dropdown">
+                         <button id="fixtureSelect" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Round
+                             <span class="caret"></span></button>
+                         <ul class="dropdown-menu phase-menu">
+                             <li><a href="#" data-value="28" onclick="updateFixtureTable(28,'Round 1 Game Week 28')">Round 1 Game Week 28</a></li>
+                             <li><a href="#" data-value="29" onclick="updateFixtureTable(29,'Round 2 Game Week 29')">Round 2 Game Week 29</a></li>
+
+                         </ul>
+                     </div>
+                   </div>
+                   <div class ="col-md-4"></div>
+               </div>
+               <br>
                <div class="row">
                 <div  id = "fixtureContainer">
 
                 </div>
+               </div>
             </div>
            </div>
           <div class="col-md-1">

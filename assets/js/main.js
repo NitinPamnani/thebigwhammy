@@ -2,7 +2,34 @@
  * Change Navbar color while scrolling
 */
 
+function updateFixtureTable(gameweek, btnValue) {
+    $.getJSON(gameweek+"/versusTable"+gameweek+".json", function (data) {
+        var htmlData = "<div class=\"table-responsive\"><table style='text-align:center;' class=\"table table-hover table-responsive\" id=\"fixtureTable\">\n" +
+            "                        <tr style='background-color: lightgrey;'>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"Versus\">|</th>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+            "                        </tr>\n" +
+            "                        \n";
 
+        //var gameWeekPoints = 0;
+        //var individualGameWeekPoints = 0;
+        //var rank = 1;
+        $.each(data, function (setNumber, setDetails) {
+            //console.log(userName);
+            //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
+
+            //individualGameWeekPoints =(value.points - value.event_transfers_cost);
+            //gameWeekPoints += individualGameWeekPoints;
+            htmlData += "<tr><td><strong>" + setDetails["team1"] + "</strong> <sub><em>" + setDetails["player1"] + "</em></sub></td>" + "<td><strong style='color:darkslateblue;'>" + setDetails["score1"] + "----" + setDetails["score2"] + "</strong></td>" + "<td><strong>" + setDetails["team2"] + "</strong> <sub><em>" + setDetails["player2"] + "</em></sub></td></tr>";
+
+        });
+        htmlData += "</table>" + "</div>";
+        $('#fixtureContainer').html(htmlData);
+        $('#fixtureSelect').html(btnValue+"<span class=\"caret\"></span>");
+
+    });
+};
 
 function sortTable(tableId, valueToCompare, elementTypeToCompare){
 	var table,rows,switching, i, x, y, shouldSwitch;
@@ -316,7 +343,7 @@ $(document).ready(function(){
     $.getJSON("tableOutputRanks.json", function(jsonRanks){
        var arrayOfNames = Object.keys(jsonRanks[10]);
        $.each(arrayOfNames, function(index,playerName){
-           var rankJump = jsonRanks[19][playerName] - jsonRanks[28][playerName];
+           var rankJump = jsonRanks[19][playerName] - jsonRanks[29][playerName];
            if(rankJump > 0 && rankJump > ironManRankJump){
                ironManRankJump = rankJump;
                ironManPlayer = playerName;
@@ -380,30 +407,32 @@ $(document).ready(function(){
 
   });
 
-  $.getJSON("versusTable28.json",function(data){
-      var htmlData = "<div class=\"table-responsive\"><table style='text-align:center;' class=\"table table-hover table-responsive\" id=\"fixtureTable\">\n" +
-          "                        <tr style='background-color: lightgrey;'>\n" +
-          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
-          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"Versus\">|</th>\n" +
-          "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
-          "                        </tr>\n" +
-          "                        \n";
+function updateFixtureTable(gameweek) {
+    $.getJSON(gameweek+"/versusTable"+gameweek+".json", function (data) {
+        var htmlData = "<div class=\"table-responsive\"><table style='text-align:center;' class=\"table table-hover table-responsive\" id=\"fixtureTable\">\n" +
+            "                        <tr style='background-color: lightgrey;'>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"Versus\">|</th>\n" +
+            "                        <th style='text-align: center;' data-toggle=\"tooltip\" title=\"TeamName\">TEAM NAME <sub><em>MANAGER'S NAME</em></sub></th>\n" +
+            "                        </tr>\n" +
+            "                        \n";
 
-      //var gameWeekPoints = 0;
-      //var individualGameWeekPoints = 0;
-      //var rank = 1;
-      $.each(data, function (setNumber, setDetails) {
-          //console.log(userName);
-          //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
+        //var gameWeekPoints = 0;
+        //var individualGameWeekPoints = 0;
+        //var rank = 1;
+        $.each(data, function (setNumber, setDetails) {
+            //console.log(userName);
+            //console.log("Rank for event"+value.event+":"+jsn[value.event][userName]);
 
-          //individualGameWeekPoints =(value.points - value.event_transfers_cost);
-          //gameWeekPoints += individualGameWeekPoints;
-          htmlData += "<tr><td><strong>"+setDetails["team1"]+"</strong> <sub><em>"+setDetails["player1"]+"</em></sub></td>"+"<td><strong style='color:darkslateblue;'>"+setDetails["score1"]+"----"+setDetails["score2"]+"</strong></td>"+"<td><strong>"+setDetails["team2"]+"</strong> <sub><em>"+setDetails["player2"]+"</em></sub></td></tr>";
+            //individualGameWeekPoints =(value.points - value.event_transfers_cost);
+            //gameWeekPoints += individualGameWeekPoints;
+            htmlData += "<tr><td><strong>" + setDetails["team1"] + "</strong> <sub><em>" + setDetails["player1"] + "</em></sub></td>" + "<td><strong style='color:darkslateblue;'>" + setDetails["score1"] + "----" + setDetails["score2"] + "</strong></td>" + "<td><strong>" + setDetails["team2"] + "</strong> <sub><em>" + setDetails["player2"] + "</em></sub></td></tr>";
 
-      });
-      htmlData += "</table>"+"</div>";
-      $('#fixtureContainer').html(htmlData);
-  });
+        });
+        htmlData += "</table>" + "</div>";
+        $('#fixtureContainer').html(htmlData);
+    });
+};
 
 
 
