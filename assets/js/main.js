@@ -343,7 +343,7 @@ $(document).ready(function(){
     $.getJSON("tableOutputRanks.json", function(jsonRanks){
        var arrayOfNames = Object.keys(jsonRanks[10]);
        $.each(arrayOfNames, function(index,playerName){
-           var rankJump = jsonRanks[19][playerName] - jsonRanks[31][playerName];
+           var rankJump = jsonRanks[19][playerName] - jsonRanks[33][playerName];
            if(rankJump > 0 && rankJump > ironManRankJump){
                ironManRankJump = rankJump;
                ironManPlayer = playerName;

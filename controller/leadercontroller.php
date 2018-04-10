@@ -35,6 +35,8 @@ class leadercontroller {
             $phase = 7;
         }else if(strcmp($stat, "february") == 0){
             $phase = 8;
+        }else if(strcmp($stat, "march") == 0){
+            $phase = 9;
         }
 
         $set2 = file_get_contents('https://fantasy.premierleague.com/drf/leagues-classic-standings/402475?phase='.$phase.'&le-page=2&ls-page=2');
