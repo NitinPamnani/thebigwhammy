@@ -44,6 +44,15 @@ $gw2m{'7'}{'end'} = 25;
 $gw2m{'8'}{'start'} = 26;
 $gw2m{'8'}{'end'} = 28;
 
+$gw2m{'9'}{'start'} = 29;
+$gw2m{'9'}{'end'} = 32;
+
+$gw2m{'10'}{'start'} = 33;
+$gw2m{'10'}{'end'} = 36;
+
+$gw2m{'11'}{'start'} = 37;
+$gw2m{'11'}{'end'} = 38;
+
 my $tableFile = "tableOutputFinal.txt";
 my $pointsFile = "tableOutputPoints.json";
 open(my $FH, ">>tableOutputRanks.json") or die "Cannot open file $!";
@@ -126,6 +135,12 @@ sub getMonthByNumber{
     return "January";
   }elsif($value == 8){
     return "February";
+  }elsif($value == 9){
+    return "March";
+  }elsif($value == 10){
+    return "April";
+  }elsif($value == 11){
+    return "May";
   }
 }
 sub getMonth2Winner{

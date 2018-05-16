@@ -57,8 +57,11 @@
                               <div class="item">
                                   <canvas id="monthly-February" class="card-img-top" width="360" height="235"></canvas>
                               </div>
-			      <div class="item active">
+			                  <div class="item">
                                   <canvas id="monthly-March" class="card-img-top" width="360" height="235"></canvas>
+                              </div>
+                              <div class="item active">
+                                  <canvas id="monthly-April" class="card-img-top" width="360" height="235"></canvas>
                               </div>
 
                               <div class="item">
@@ -171,6 +174,8 @@
 								<li><a href="?stat=january" data-value="january">January</a></li>
 								<li><a href="?stat=february" data-value="february">February</a></li>
 								<li><a href="?stat=march" data-value="march">March</a></li>
+                                <li><a href="?stat=april" data-value="april">April</a></li>
+                                <li><a href="?stat=may" data-value="may">May</a></li>
 							</ul>
 				    </div>
 					</div>
